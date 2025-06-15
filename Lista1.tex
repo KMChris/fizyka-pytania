@@ -135,23 +135,82 @@ Transformacja Fouriera funkcji falowej pozwala na przejście z reprezentacji w p
 
 \subsection{Wyjaśnij transformację Fouriera między przestrzenią położeń a pędu.}
 
-odpowiedź
+\textbf{Źródło:} Notatki.pdf, rozdz.~2~\S2.2; Wikipedia\,\emph{Momentum space}.
+		
+		Pakiet falowy opisany w przestrzeni położeń $\Psi(x)$ i pędu $\phi(p)$ łączy
+		para transformat:
+		\[
+		\boxed{\Psi(x)=\tfrac{1}{\sqrt{2\pi\hbar}}\!\int\!\phi(p)\,e^{\tfrac{i}{\hbar}px}dp},\qquad
+		\boxed{\phi(p)=\tfrac{1}{\sqrt{2\pi\hbar}}\!\int\!\Psi(x)\,e^{\! -\tfrac{i}{\hbar}px}dx}.
+		\]
+		Dla dowolnego $t$:
+		\[
+		\Psi(x,t)=\tfrac{1}{\sqrt{2\pi\hbar}}\!\int\!\phi(p)\,e^{\tfrac{i}{\hbar}(px-E(p)t)}dp,\qquad E(p)=\tfrac{p^{2}}{2m}.
+		\]
+		
+		\textbf{Symbole:} $x$ – położenie, $p$ – pęd, $\hbar$ – stała Plancka z kreską.
+		Nieoznaczoność $\Delta x\,\Delta p \ge \hbar/2$ wynika z tej pary transformacji.
 
 \subsection{Czym są stany swobodne i związane?}
 
-odpowiedź
+\textbf{Źródło:} Notatki.pdf, rozdz.~4; Griffiths\,\emph{Introduction to QM}, ch.~2.
+		
+		\textbf{Swobodne:} $V(x)=0$, $\psi_k=e^{\pm ikx}$, $E=\hbar^{2}k^{2}/2m>0$ – widmo ciągłe.
+		
+		\textbf{Związane:} cząstka uwięziona; normalizacja $\Rightarrow$ dyskretne $E_n<0$.
+		W studni nieskończonej szerokości $a$: $E_n=\hbar^{2}\pi^{2}n^{2}/2ma^{2}$.
+		
+		\textbf{Rozproszone:} $E>0$ przy skończonym potencjale – fala padającą, odbita i transmitowana.
+		
+		\textbf{Symbole:} $k=\sqrt{2mE}/\hbar$, $n=1,2,\dots$, $a$ – szerokość studni.
 
 \subsection{Jakie są warunki ciągłości dla funkcji falowej i jej pochodnych?}
 
-odpowiedź
+\textbf{Źródło:} Notatki.pdf, rozdz.~3~\S3.1.
+		
+		Dla skończonego, skokowego potencjału $V(x)$ na granicy $x_0$:
+		\[
+		\psi(x_0^-) = \psi(x_0^+),\qquad
+		\psi'(x_0^-) = \psi'(x_0^+).
+		\]
+		Dla bariery nieskończonej: $\psi=0$ na krawędzi, pochodna może skakać.
 
 \subsection{Co to jest operator momentu pędu?}
 
-odpowiedź
+\textbf{Źródło:} Wikipedia\,\emph{Angular momentum operator}; Cohen-Tannoudji, vol.~1, ch.~7.
+		
+		\[
+		\hat{\mathbf L}=\hat{\mathbf r}\times\hat{\mathbf p}=-i\hbar(\mathbf r\times\nabla),
+		\]
+		\[
+		\hat L_x=-i\hbar(y\partial_z-z\partial_y),\quad
+		\hat L_y=-i\hbar(z\partial_x-x\partial_z),\quad
+		\hat L_z=-i\hbar(x\partial_y-y\partial_x).
+		\]
+		\textbf{Symbole:} $\mathbf r=(x,y,z)$, $\nabla$ – operator nabla.
 
 \subsection{Jakie są relacje komutacyjne dla składników momentu pędu?}
 
-odpowiedź
+\textbf{Źródło:} Wikipedia\,\emph{Angular momentum operator}; Sakurai\,\emph{Modern QM}, \S3.3.
+		
+		Składowe nie komutują:
+		\[
+		[\hat L_x,\hat L_y]=i\hbar\hat L_z,\quad
+		[\hat L_y,\hat L_z]=i\hbar\hat L_x,\quad
+		[\hat L_z,\hat L_x]=i\hbar\hat L_y.
+		\]
+		Całkowity moment
+		\(
+		\hat L^{2}=\hat L_x^{2}+\hat L_y^{2}+\hat L_z^{2}
+		\)
+		komutuje z każdą składową: $[\hat L^{2},\hat L_i]=0$.
+		
+		\textbf{Konsekwencje:}
+		\begin{itemize}
+			\item Można jednocześnie diagonalizować $\hat L^{2}$ i $\hat L_z$.
+			\item Wartości własne: $\hat L^{2}|l,m\rangle=\hbar^{2}l(l+1)|l,m\rangle$, $\hat L_z|l,m\rangle=\hbar m|l,m\rangle$.
+			\item Liczby kwantowe: $l=0,1,2,\dots$ oraz $m=-l,\dots,l$.
+		\end{itemize}
 
 \subsection{Jakie są wartości własne $L^2$ i $L_z$?}
 
