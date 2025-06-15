@@ -62,20 +62,216 @@ Funkcja falowa wyraża się więc przez odwrotną transformatę Fouriera repreze
 $$\psi(x) = \frac{1}{\sqrt{2\pi \hbar}} \int_{-\infty}^{+\infty} \phi(p) \mathrm{e}^{\frac{ipx}{\hbar}} \mathrm{d} p.$$
 
 \subsection{Stany kwantowe, operatory oraz równanie Schrödingera w interpretacji Feynmana}
+(z różnych źródeł, fiszek fishcards, chatu, notatek)
+\textbf{Stan kwantowy} to matematyczny opis systemu kwantowego, który zawiera wszystkie informacje o jego właściwościach.  
+\textit{Podstawowe elementy stanu kwantowego:}
+\begin{itemize}
+  \item \textit{Funkcja falowa} \(\Psi(\mathbf{r},t)\) lub ogólniej wektor stanu \(\lvert \psi \rangle\) w przestrzeni Hilberta.
+  \item \textit{Przestrzeń Hilberta} \(\mathcal{H}\) – zespolona przestrzeń wektorowa z iloczynem skalarnym, w której żyją wektory stanu.
+\textit{Rodzaje stanów:}
+\begin{itemize}
+  \item{Stan czysty} 
+  \item{Stan mieszany} 
+  \textit{Superpozycja} to możliwość istnienia jednocześnie w wielu stanach bazowych 
+  
+\textbf{Operatory}
+Operator to matematyczny obiekt, który działa na funkcje falowe i odpowiada za pomiar wielkości fizycznych.
+Amplitudę że przejdziemy ze stanu $+S$ do $0R$ możemy zapisać jako
+\begin{equation*}
+	a = \langle\ 0R \vert \dots \rangle \langle\ \dots \vert \dots \rangle \dots \langle\ \dots \vert \dots \rangle \langle\ \dots \vert +S \rangle  = \langle\ 0R \vert A \vert +S \rangle 
+\end{equation*}
+gdzie $A$ to są różne operacje związane ze zbiorem urządzeń. Przez $\hat{A}$ będziemy oznaczać operator generalny.
+Możemy też zapisać macierz operatora $\hat{A}$. Niech $\vert +S \rangle$, $\vert 0S \rangle$, $\vert -S \rangle$ będą stanami naszej bazy. Wtedy mamy
+\begin{table}[ht]
+	\centering
+	\begin{tabular}[t]{c|c|c|c}
+		& $+$ & $0$ & $-$\\
+		\hline
+		$+$ & $\langle\ + \vert \hat{A} \vert + \rangle $ & $\langle\ + \vert \hat{A} \vert 0 \rangle $ & $\langle\ + \vert \hat{A} \vert - \rangle $ \\
+		\hline
+		$0$ & $\langle\ 0 \vert \hat{A} \vert + \rangle $ & $\langle\ 0 \vert \hat{A} \vert 0 \rangle $ & $\langle\ 0 \vert \hat{A} \vert - \rangle $ \\
+		\hline
+		$-$ & $\langle\ - \vert \hat{A} \vert + \rangle $ & $\langle\ - \vert \hat{A} \vert 0 \rangle $ & $\langle\ - \vert \hat{A} \vert - \rangle $ \\
+	\end{tabular}
+	\label{tab:macierzoperatora}
+\end{table}
 
-odpowiedź
+Powyższe nazywamy macierzą operatora $\hat{A}$ w bazie takiej jak wyżej podanej. Dajemy też czapkę nad operatorem aby zawsze było wiadomo że chodzi nam o operator, ale nie zawsze trzeba to pisać. Operator nigdy nie jest zależny od bazy ale macierz operatora zawsze jest w jakiejś bazie.
+\textit{Najważniejsze operatory w mechanice kwantowej}
 
+\begin{enumerate}
+  \item \textbf{Operator Hamiltona} \(\hat{H}\) \\
+    Opisuje całkowitą energię układu i steruje jego ewolucją czasową.
+
+  \item \textbf{Operator położenia} \(\hat{x}\) \\
+    Przypisuje wartość położenia cząstki.
+
+  \item \textbf{Operator pędu} \(\hat{p}\) \\
+    Odpowiada wartości pędu, w reprezentacji położenia jest operatorem różniczkowym.
+
+  \item \textbf{Operatory spinowe} \(\hat{S}_i\) (np. \(\hat{S}_x, \hat{S}_y, \hat{S}_z\)) \\
+    Opisują własności spinowe cząstek, np. spinu \(1/2\).
+
+  \item \textbf{Operator projekcji} \(\hat{P}\) \\
+    Rzutuje stan na podprzestrzeń odpowiadającą określonej wartości pomiaru.
+
+  \item \textbf{Operator unitarny} \(\hat{U}\) \\
+    Opisuje ewolucję jednostkową i zmiany baz wektorów stanu.
+
+  \item \textbf{Operator gęstości} \(\rho\) \\
+    Opisuje stan mieszany i statystyczny układ kwantowy.
+\end{enumerate}
+\textbf{ równanie Schrödingera w interpretacji Feynmana}
+nie wiem o co tu chodzi w notatkach jest jedynie coś nazwane ,,Eksperyment S-G w interpretacji Feynmana". Wkleje to ponizej ale nie wiem czy o to chodzi. 
+Eksperyment z dwoma szczelinami.
+Prawdopodobieństwo, że elektron ze stanu S przejdzie do stanu X \newline [Stan $X$] $\leftarrow$ [Stan $S$] = $\vert\langle X\vert S\rangle\vert^2$ będziemy nazywać amplitudą.
+Amplitudę ze stanu $S$ do stanu $X$ możemy w tym przypadku zapisać dwojako, w postaci $\langle X\vert1\rangle, \langle 1\vert S\rangle$ jako przejścia ze stanu $S$ do stanu $1$ a następnie ze stanu $1$ do stanu $X$, oraz analogicznie w postaci $\langle X\vert2\rangle , \langle 2\vert S\rangle$. Przepiszemy korzystając z tych oznaczeń zasadę superpozycji. Jeżeli chcemy przejść ze stanu $S$ do stanu $X$ to będziemy to zapisywać jako sumę amplitud $\langle X\vert S\rangle = \langle X\vert1\rangle\langle 1\vert S\rangle + \langle X\vert2\rangle \langle 2\vert S\rangle$. Jeżeli chcemy zapisać prawdopodobieństwo to musimy obliczyć z tego moduł do kwadratu i obliczyć to wszystko w liczbach zespolonych $\vert\langle X\vert S\rangle \vert^2 = \vert[...]\vert^2$. 
+\textit{Pytanie} co oznacza superpozycja? Jeżeli chcemy obliczyć amplitudę to jest to suma poszczególnych amplitud. Amplituda $S$ do $Z$ jest superpozycją przejścia przez szczeliny.
 \subsection{Twierdzenie Ehrenfesta}
+(notatki str. 27)
+$$
+\frac{d}{dt} \langle x \rangle = \frac{1}{m} \int \psi^* \left(-i\hbar \frac{\partial}{\partial x}\right) \psi \, d\vec{r} = \frac{1}{m} \langle \hat{p}_x \rangle.
+$$
 
-odpowiedź
+$$
+\frac{d}{dt} \langle \hat{p}_x \rangle = - \left\langle \frac{\partial V}{\partial x} \right\rangle.
+$$
+
+Powyższe dwa równania stanowią treść twierdzenia Ehrenfesta i pokazują, że średnie wartości położenia i pędu w mechanice kwantowej zmieniają się zgodnie z klasycznymi równaniami ruchu. 
+
 
 \subsection{Obserwable, równanie Schrödingera, zależne oraz niezależne od czasu, własne stany, własne energie}
 
-odpowiedź
+\textbf{Obserwable:}
+W mechanice kwantowej \textbf{obserwabla} (ang. observable) to fizyczna wielkość, którą można zmierzyć eksperymentalnie, np. położenie, pęd, energia czy spin. Każdej obserwabli odpowiada hermitowski operator $\hat{A}$ działający na funkcje falowe przestrzeni Hilberta. Wartość średnia obserwabli $\hat{A}$ w stanie opisanym funkcją falową $\psi(\vec{r}, t)$ dana jest przez wyrażenie:
+$$
+\langle \hat{A} \rangle = \int \psi^*(\vec{r}, t) \hat{A} \psi(\vec{r}, t) \, d\vec{r}.
+$$
+
+Operator $\hat{A}$ musi być hermitowski, aby wartości średnie $\langle \hat{A} \rangle$ były liczbami rzeczywistymi, zgodnie z wymaganiami eksperymentu:
+$$
+\langle \hat{A} \rangle \in \mathbb{R}.
+$$
+
+Dla hermitowskiego operatora $\hat{A}$ zachodzi również
+$$
+\langle \hat{A} \rangle = \int \psi^* (\hat{A} \psi) \, d\vec{r} = \int (\hat{A} \psi)^* \psi \, d\vec{r}.
+$$
+
+\textbf{Przykłady obserwabli:}
+
+\begin{itemize}
+    \item Średnia wartość położenia:
+    $$
+    \langle \hat{\vec{r}} \rangle = \int \psi^*(\vec{r}, t) \vec{r} \psi(\vec{r}, t) \, d\vec{r}.
+    $$
+
+    \item Średnia wartość funkcji $f(\vec{r}, t)$:
+    $$
+    \langle f(\vec{r}, t) \rangle = \int \psi^*(\vec{r}, t) f(\vec{r}, t) \psi(\vec{r}, t) \, d\vec{r}.
+    $$
+
+    \item Średnia wartość pędu (w reprezentacji położeniowej, po transformacji Fouriera):
+    $$
+    \langle \vec{p} \rangle = \int \psi^*(\vec{r}, t) \left( -i\hbar \vec{\nabla} \right) \psi(\vec{r}, t) \, d\vec{r}.
+    $$
+\end{itemize}
+\textbf{Równanie Schorninberga zależne od czasu:}
+
+\begin{equation}
+  i \hbar \frac{\partial}{\partial t} \Psi(\mathbf{r},t)
+  = \hat{H}\,\Psi(\mathbf{r},t),
+\end{equation}
+
+gdzie hamiltonian dla jednej cząstki w potencjale \(V(\mathbf{r},t)\) ma postać:
+\begin{equation}
+  \hat{H}
+  = -\frac{\hbar^2}{2m} \,\nabla^2 \;+\; V(\mathbf{r},t).
+\end{equation}
+
+\bigskip
+Poniżej zestawienie znaczenia poszczególnych symboli:
+
+\begin{itemize}
+  \item[\(\Psi(\mathbf{r},t)\)] funkcja falowa cząstki, zależna od współrzędnych przestrzennych \(\mathbf{r}\) i czasu \(t\).
+  \item[\(i\)] jednostka urojona, spełniająca \(i^2 = -1\).
+  \item[\(\hbar\)] stała Plancka podzielona przez \(2\pi\), \(\hbar = \frac{h}{2\pi}\).
+  \item[\(\frac{\partial}{\partial t}\)] pochodna cząstkowa względem czasu \(t\).
+  \item[\(\hat{H}\)] operator Hamiltona, opisujący energię całkowitą układu.
+  \item[\(m\)] masa cząstki.
+  \item[\(\nabla^2\)] operator Laplace’a
+  \item[\(V(\mathbf{r},t)\)] potencjał, w którym porusza się cząstka; może zależeć od położenia \(\mathbf{r}\) i czasu \(t\).
+\end{itemize}
+
+\textbf{Równanie Schorninberga niezależne od czasu:}
+\[
+\hat{H}\,\psi(\mathbf{r}) = E\,\psi(\mathbf{r}),
+\]
+gdzie
+\[
+\hat{H} = -\frac{\hbar^2}{2m}\,\nabla^2 + V(\mathbf{r}).
+\]
+
+\bigskip
+\noindent
+Znaczenie symboli:
+\begin{itemize}
+  \item[\(\hat{H}\)] operator Hamiltona (energia całkowita układu),
+  \item[\(\psi(\mathbf{r})\)] funkcja własna (stacjonarna funkcja falowa),
+  \item[\(E\)] wartość własna (energia stanu),
+  \item[\(\hbar\)] zredukowana stała Plancka (\(\hbar = h/(2\pi)\)),
+  \item[\(\nabla^2\)] operator Laplace’a 
+    \(\bigl(\nabla^2 = \tfrac{\partial^2}{\partial x^2}
+                        + \tfrac{\partial^2}{\partial y^2}
+                        + \tfrac{\partial^2}{\partial z^2}\bigr)\),
+  \item[\(V(\mathbf{r})\)] potencjał zależny od położenia \(\mathbf{r}\).
+\end{itemize}
+\textbf{własności własne egergii własne)
+Funkcje własne operatora Hamiltona $\hat{H}$, oznaczane jako $\psi_E(\vec{r})$, spełniają równanie Schrödingera $\hat{H} \psi_E = E \psi_E,$ gdzie $E$ jest odpowiadającą im wartością własną, interpretowaną jako energia stanu. Zakładamy, że funkcje $\psi_E(\vec{r})$ są unormowane
+$$
+\int \psi_E^*(\vec{r}) \psi_E(\vec{r}) \, d\vec{r} = 1,
+$$
+oraz ortogonalne względem siebie dla różnych wartości energii
+$$
+\int \psi_E^*(\vec{r}) \psi_{E'}(\vec{r}) \, d\vec{r} = 0
+\quad \text{dla } E \ne E'.
+$$
+Dla $E \ne E'$ całka musi być równa zeru, czyli funkcje własne odpowiadające różnym wartościom energii są ortogonalne.
+
+Z faktu, że operator Hamiltona jest hermitowski, wynika również, że jego funkcje własne tworzą pełną bazę przestrzeni Hilberta. Oznacza to, że każdą funkcję falową $\Psi(\vec{r}, t)$ można przedstawić jako kombinację liniową funkcji własnych Hamiltonianu
+$$
+\Psi(\vec{r}, t) = \sum_E C_E(t) \psi_E(\vec{r}),
+$$
+gdzie suma biegnie po wszystkich stanach odpowiadających różnym energiom, w tym zdegenerowanym.
 
 \subsection{Proste zagadnienia: swobodna cząstka}
 
-odpowiedź
+Rozwiązanie równania Schrödingera dla swobodnej cząstki to fale płaskie o postaci $\Psi(x) = A e^{ikx} + B e^{-ikx}$, gdzie
+$k$ jest wektorem falowym związanym z energią kinetyczną cząstki. Energia jest zawsze nieujemna, a funkcje falowe muszą być
+ograniczone, co wymusza rzeczywiste wartości $k$.
+
+
+\begin{equation*}
+    - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi(x) = E \psi(x)
+\end{equation*}
+
+gdzie:
+\begin{equation*}
+    k = \frac{\sqrt{2mE}}{\hbar}
+\end{equation*}
+%
+\begin{equation*}
+    \psi(x) = A e^{ikx} + B e^{-ikx}
+\end{equation*}
+
+$ k \in \mathbb{R} $, bo inaczej mamy rozbieżne $\psi(x)$. \\
+$ E >= 0 $, bo $ k = \frac{\sqrt{2mE}}{\hbar^2} $, a $ 2m > 0 $, $ \hbar > 0 $.
+
+Natomiast $E$ wyraża się wzorem:
+\begin{equation*}
+    E = \frac{\hbar^2 k^2}{2m}
+\end{equation*}
+
 
 \subsection{Proste zagadnienia: potencjał w kształcie schodków, bariery, studni kwadratowej}
 
