@@ -1,26 +1,58 @@
 \subsection{Jaka jest różnica między przestrzenią Hilberta a przestrzenią fizyczną?}
 
-odpowiedź
+Przestrzeń Hilberta to abstrakcyjna, zespolona przestrzeń wektorowa z iloczynem skalarnym, która jest kompletna względem normy indukowanej przez ten iloczyn. Przestrzeń fizyczna natomiast to rzeczywista przestrzeń, w której istnieją obiekty fizyczne — np. przestrzeń trójwymiarowa, w której mogą znajdować się cząstki. Przestrzeń Hilberta opisuje możliwe stany kwantowe, a przestrzeń fizyczna lokalizację i ewolucję obiektów w klasycznym sensie.
 
 \subsection{Czym jest operator liniowy w mechanice kwantowej?}
 
-odpowiedź
+Operator liniowy $\hat A$ to odwzorowanie działające na wektory przestrzeni Hilberta postaci
+$$
+\hat A:\,\mathcal{D}(\hat A)\subseteq\mathcal{H}\longrightarrow\mathcal{H},
+\qquad
+\hat A\bigl(\alpha \ket{\psi}+\beta\ket{\phi}\bigr)=
+\alpha\,\hat A\ket{\psi}+\beta\,\hat A\ket{\phi},
+$$
+dla wszystkich $\alpha,\beta\in\mathbb{C}$ i $\ket{\psi},\ket{\phi}\in\mathcal{D}(\hat A)$, gdzie $\mathcal{D}(\hat A)$ to dziedzina operatora $\hat{A}$.
 
 \subsection{Zdefiniuj operator hermitowski.}
 
-odpowiedź
+Operator (samosprzężony) Hermitowski $\hat H$ spełnia
+$$
+\mel{\phi}{\hat H}{\psi}
+=\mel{\hat H\phi}{\psi},
+\qquad
+\forall\,\ket{\psi},\ket{\phi}\in\mathcal{D}(\hat H),
+$$
+czyli $\hat H=\hat H^{\dagger}$, gdzie $H^{\dagger}$ to sprzężenie hermitowskie operatora $\hat{H}$.  W bazie dyskretnej oznacza to równość macierzy z jej sprzężeniem hermitowskim: $H_{ij}=H_{ji}^{*}$.
 
 \subsection{Jakie wielkości fizyczne odpowiadają operatorom hermitowskim?}
 
-odpowiedź
+Każdej mierzalnej wielkości fizycznej przypisujemy operator Hermitowski.
+\begin{itemize}
+  \item energia – hamiltonian $\hat H$,
+  \item pęd $\hat{\vb{p}}$,
+  \item położenie $\hat{\vb{r}}$,
+  \item moment pędu i spin $\hat{\vb{L}}$,
+  \item spin $\hat{\vb{S}}$
+  \item liczba cząstek $\hat N$,
+  \item itd
+\end{itemize}
+Hermitowskość gwarantuje, że wyniki pomiaru (wartości własne) są rzeczywiste, a odpowiadające im wektory własne tworzą bazę przestrzeni stanów.
 
 \subsection{Czym są wartości własne i wektory własne w kontekście pomiarów kwantowych?}
 
-odpowiedź
+Dla operatora $\hat A$ równanie
+$$
+\hat A\ket{a_n}=a_n\ket{a_n}
+$$
+definiuje pary $(a_n,\ket{a_n})$ zwane odpowiednio wartościami własnymi i wektorami własnymi. W kontekście pomiarów: $ a $ to możliwy wynik pomiaru obserwabli reprezentowanej przez $ \hat{A} $, a $ \ket{a} $ to stan własny układu, w którym pomiar tej wielkości zawsze da wynik $ a $.
 
 \subsection{Jakie jest fizyczne znaczenie iloczynu skalarnego w przestrzeni Hilberta?}
 
-odpowiedź
+Iloczyn skalarny $\braket{\phi}{\psi}$ dostarcza amplitudę przejścia (nakładania) między stanami $\ket{\psi}$ i $\ket{\phi}$. Jego moduł podniesiony do kwadratu daje prawdopodobieństwo znalezienia układu w stanie $\ket{\phi}$, jeśli przygotowano go w stanie $\ket{\psi}$,
+$$
+P_{\psi\!\to\!\phi}=|\braket{\phi}{\psi}|^{2}.
+$$
+Iloczyn skalarny pozwala również definiować normę ($\|\psi\|^{2}=\braket{\psi}{\psi}$, normalizowaną do jedności), ortogonalność ($\braket{\phi}{\psi}=0$) oraz projekcje stanów.
 
 \subsection{Wyjaśnij znaczenie normalizacji stanów kwantowych.}
 
