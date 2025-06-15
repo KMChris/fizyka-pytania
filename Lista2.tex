@@ -1,18 +1,65 @@
 \subsection{Na czym polega katastrofa ultrafioletowa?}
 
-odpowiedź
+Eksperyment Stefana-Boltzmanna (1878) badał promieniowanie cieplne emitowane przez
+ciało doskonale czarne. Ciało doskonale czarne to wyidealizowane ciało fizyczne pochłaniające całkowicie padające na nie promieniowanie elektromagnetyczne, niezależnie od temperatury tego ciała, kąta padania i widma padającego promieniowania. Według klasycznej teorii (prawo Rayleigha-Jeansa), ciało doskonale czarne powinno emitować coraz więcej energii w miarę wzrostu częstotliwości promieniowania. To prowadzi do absurdu – przy wysokich częstotliwościach (w zakresie nadfioletu i wyżej) energia promieniowania dąży do nieskończoności. Taki efekt nie występuje w rzeczywistości. Obserwacje eksperymentalne pokazały, że natężenie promieniowania nie rośnie w nieskończoność. Zgodnie z klasyczną fizyką, każda z nieskończonej liczby możliwych drgań wnęki ciała czarnego powinna otrzymywać pewną ilość energii. W rezultacie całkowita energia promieniowania miałaby być nieskończona – co jest fizycznie niemożliwe.
+
+Katastrofa nadfioletowa była jednym z pierwszych dowodów, że klasyczna fizyka nie wystarcza do opisu zjawisk mikroświata. Jej rozwiązanie zapoczątkowało mechanikę kwantową.
 
 \subsection{Jakie są eksperymentalne dowody tego, że światło istnieje, się emituje oraz jest absorbowane porcjami (kwantami)?}
 
-odpowiedź
+Efekt fotoelektryczny (Hertz, Lenard, Einstein – 1887–1905) to jedno z najważniejszych i najwcześniejszych zjawisk potwierdzających, że światło oddziałuje z materią w sposób kwantowy. 
+
+Efekt fotoelektryczny to zjawisko emisji elektronów z powierzchni metalu pod wpływem padającego na niego światła. Najważniejsze obserwacje:
+\begin{itemize}
+\item Elektrony są emitowane tylko wtedy, gdy częstotliwość światła przekracza pewną wartość progową, niezależnie od jego natężenia. 
+\item Energia kinetyczna wybitych elektronów zależy od częstotliwości, a nie od intensywności światła.
+\itemNie obserwuje się opóźnienia czasowego emisji nawet przy bardzo słabym świetle, jeśli tylko ma ono odpowiednią częstotliwość.
+\end{itemize}
+
+Einstein sformułował wzór efektu fotoelektrycznego
+\begin{equation*}
+\frac12 m v_{max}^2 = h \nu - W,
+\end{equation*}
+gdzie $W$ to funkcja pracy metalu (zależna od rodzaju metalu). Dowodzi to kwantyzacji: Elektron absorbuje energię światła w całości – nie stopniowo, lecz jednorazowo, jako pojedynczy kwant (foton).
 
 \subsection{Przedyskutuj zjawisko interferencji fal}
 
-odpowiedź
+Zjawisko interferencji fal polega na nakładaniu się dwóch lub więcej fal w przestrzeni, prowadzącym do wzmocnienia lub osłabienia amplitudy fali wypadkowej w danym punkcie.
+
+W roku 1801 Thomas Young przeprowadził eksperyment, przepuszczając
+przez szczeliny światło. Przez dwie szczeliny przechodziła tak zwana fala płaska, poruszająca się w kierunku ekranu. W sensie optyki klasycznej albo termodynamiki klasycznej, możemy powiedzieć, że przykładowo światło słoneczne jest taką falą płaską. Ta fala płaska przechodzi przez szczeliny, a następnie dalej jako fala płaska przemieszcza się w kierunku oddalonego ekranu. Co zobaczymy na ekranie? Na ekranie zobaczymy coś niespodziewanego - będzie to obraz interferencyjny.
+
+\begin{itemize}
+\item Amplituda fali -- wektor zależny od położenia w przestrzenii oraz od czasu: $$A(\overline{r}, t)$$
+\item Intensywność światła
+$$I = |A|^2$$
+\item Zasada superpozycji -- aby obliczyć amplitudę całkowitą musimy zsumować amplitudy fal pochodzących z obu szczelin (z obu źródeł):
+$$\overline{A}(\overline{r}, t) = \overline{A}_1(\overline{r}, t) + \overline{A}_2(\overline{r}, t)$$
+\item Intensywność całkowita ma postać
+$$I = |A_1|^2 + |A_2^2| + A_1 A_2^{*} + A_1^{*} A_2$$
+Człon $A_1 A_2^{*} + A_1^{*} A_2$ jest odpowiedzialny za interferencję. Obraz widoczny na ekranie jest spowodowany superpozycją fal pochodzących z obu szczelin.
+\end{itemize}
 
 \subsection{Czym są pakiety falowe? Problem normalizacji, przekształcenia pomiędzy przestrzenią położenia oraz przestrzenią pędu.}
 
-odpowiedź
+Pakiet falowy to reprezentacja cząstki jako superpozycji fal o różnych długościach fali. Wyraża się poprzez transformatę Fouriera jako suma fal płaskich.
+
+W jednym wymiarze:
+$$\Psi(x,t) = (2 \pi \hbar)^{-\frac12} \int_{-\infty}^{+\infty} \phi(p) \mathrm{e}^{\frac{i}{\hbar}\left(p x - E(p)t \right)} \mathrm{d}p,$$
+gdzie wyrażenie pod całką to fala płaska, a $\phi(p)$ to funkcja określająca pakiet falowy.
+
+W mechanice kwantowej funkcja falowa musi spełniać warunek normalizacji:
+$$\int_{-\infty}^{+\infty} |\psi(x,t)|^2 \mathrm{d}x = 1,$$
+co oznacza, że całkowite prawdopodobieństwo znalezienia cząstki gdziekolwiek = 1. 
+
+Problem w tym, że fala płaska jest nienormalizowalna, bo jej wartość jest stała na całej osi x, nie da się jej sprowadzić do jednostkowego prawdopodobieństwa.
+
+Rozwiązanie: Używamy pakietów falowych, czyli superpozycji fal płaskich o różnych $p$, które są lokalizowane w przestrzeni i dają się znormalizować.
+
+Reprezentacja pędowa jest transformatą Fouriera funkcji falowej w położeniu:
+$$\phi(p) = \frac{1}{\sqrt{2\pi \hbar}} \int_{-\infty}^{+\infty} \psi(x) \mathrm{e}^{-\frac{ipx}{\hbar}} \mathrm{d} x.$$
+Funkcja falowa wyraża się więc przez odwrotną transformatę Fouriera reprezentacji pędowej:
+$$\psi(x) = \frac{1}{\sqrt{2\pi \hbar}} \int_{-\infty}^{+\infty} \phi(p) \mathrm{e}^{\frac{ipx}{\hbar}} \mathrm{d} p.$$
 
 \subsection{Stany kwantowe, operatory oraz równanie Schrödingera w interpretacji Feynmana}
 
