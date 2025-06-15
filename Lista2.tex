@@ -1,34 +1,277 @@
 \subsection{Na czym polega katastrofa ultrafioletowa?}
 
-odpowiedź
+Eksperyment Stefana-Boltzmanna (1878) badał promieniowanie cieplne emitowane przez
+ciało doskonale czarne. Ciało doskonale czarne to wyidealizowane ciało fizyczne pochłaniające całkowicie padające na nie promieniowanie elektromagnetyczne, niezależnie od temperatury tego ciała, kąta padania i widma padającego promieniowania. Według klasycznej teorii (prawo Rayleigha-Jeansa), ciało doskonale czarne powinno emitować coraz więcej energii w miarę wzrostu częstotliwości promieniowania. To prowadzi do absurdu – przy wysokich częstotliwościach (w zakresie nadfioletu i wyżej) energia promieniowania dąży do nieskończoności. Taki efekt nie występuje w rzeczywistości. Obserwacje eksperymentalne pokazały, że natężenie promieniowania nie rośnie w nieskończoność. Zgodnie z klasyczną fizyką, każda z nieskończonej liczby możliwych drgań wnęki ciała czarnego powinna otrzymywać pewną ilość energii. W rezultacie całkowita energia promieniowania miałaby być nieskończona – co jest fizycznie niemożliwe.
+
+Katastrofa nadfioletowa była jednym z pierwszych dowodów, że klasyczna fizyka nie wystarcza do opisu zjawisk mikroświata. Jej rozwiązanie zapoczątkowało mechanikę kwantową.
 
 \subsection{Jakie są eksperymentalne dowody tego, że światło istnieje, się emituje oraz jest absorbowane porcjami (kwantami)?}
 
-odpowiedź
+Efekt fotoelektryczny (Hertz, Lenard, Einstein --- 1887-1905) to jedno z najważniejszych i najwcześniejszych zjawisk potwierdzających, że światło oddziałuje z materią w sposób kwantowy. 
+
+Efekt fotoelektryczny to zjawisko emisji elektronów z powierzchni metalu pod wpływem padającego na niego światła. Najważniejsze obserwacje:
+\begin{itemize}
+\item Elektrony są emitowane tylko wtedy, gdy częstotliwość światła przekracza pewną wartość progową, niezależnie od jego natężenia. 
+\item Energia kinetyczna wybitych elektronów zależy od częstotliwości, a nie od intensywności światła.
+\item Nie obserwuje się opóźnienia czasowego emisji nawet przy bardzo słabym świetle, jeśli tylko ma ono odpowiednią częstotliwość.
+\end{itemize}
+
+Einstein sformułował wzór efektu fotoelektrycznego
+\begin{equation*}
+\frac12 m v_{max}^2 = h \nu - W,
+\end{equation*}
+gdzie $W$ to funkcja pracy metalu (zależna od rodzaju metalu). Dowodzi to kwantyzacji: Elektron absorbuje energię światła w całości – nie stopniowo, lecz jednorazowo, jako pojedynczy kwant (foton).
 
 \subsection{Przedyskutuj zjawisko interferencji fal}
 
-odpowiedź
+Zjawisko interferencji fal polega na nakładaniu się dwóch lub więcej fal w przestrzeni, prowadzącym do wzmocnienia lub osłabienia amplitudy fali wypadkowej w danym punkcie.
+
+W roku 1801 Thomas Young przeprowadził eksperyment, przepuszczając przez szczeliny światło. Przez dwie szczeliny przechodziła tak zwana fala płaska, poruszająca się w kierunku ekranu. W sensie optyki klasycznej albo termodynamiki klasycznej, możemy powiedzieć, że przykładowo światło słoneczne jest taką falą płaską. Ta fala płaska przechodzi przez szczeliny, a następnie dalej jako fala płaska przemieszcza się w kierunku oddalonego ekranu. Co zobaczymy na ekranie? Na ekranie zobaczymy coś niespodziewanego - będzie to obraz interferencyjny.
+
+\begin{itemize}
+\item Amplituda fali -- wektor zależny od położenia w przestrzenii oraz od czasu: $$A(\overline{r}, t)$$
+\item Intensywność światła
+$$I = |A|^2$$
+\item Zasada superpozycji -- aby obliczyć amplitudę całkowitą musimy zsumować amplitudy fal pochodzących z obu szczelin (z obu źródeł):
+$$\overline{A}(\overline{r}, t) = \overline{A}_1(\overline{r}, t) + \overline{A}_2(\overline{r}, t)$$
+\item Intensywność całkowita ma postać
+$$I = |A_1|^2 + |A_2^2| + A_1 A_2^{*} + A_1^{*} A_2$$
+Człon $A_1 A_2^{*} + A_1^{*} A_2$ jest odpowiedzialny za interferencję. Obraz widoczny na ekranie jest spowodowany superpozycją fal pochodzących z obu szczelin.
+\end{itemize}
 
 \subsection{Czym są pakiety falowe? Problem normalizacji, przekształcenia pomiędzy przestrzenią położenia oraz przestrzenią pędu.}
 
-odpowiedź
+Pakiet falowy to reprezentacja cząstki jako superpozycji fal o różnych długościach fali. Wyraża się poprzez transformatę Fouriera jako suma fal płaskich.
+
+W jednym wymiarze:
+$$\Psi(x,t) = (2 \pi \hbar)^{-\frac12} \int_{-\infty}^{+\infty} \phi(p) \mathrm{e}^{\frac{i}{\hbar}\left(p x - E(p)t \right)} \mathrm{d}p,$$
+gdzie wyrażenie pod całką to fala płaska, a $\phi(p)$ to funkcja określająca pakiet falowy.
+
+W mechanice kwantowej funkcja falowa musi spełniać warunek normalizacji:
+$$\int_{-\infty}^{+\infty} |\psi(x,t)|^2 \mathrm{d}x = 1,$$
+co oznacza, że całkowite prawdopodobieństwo znalezienia cząstki gdziekolwiek = 1. 
+
+Problem w tym, że fala płaska jest nienormalizowalna, bo jej wartość jest stała na całej osi x, nie da się jej sprowadzić do jednostkowego prawdopodobieństwa.
+
+Rozwiązanie: Używamy pakietów falowych, czyli superpozycji fal płaskich o różnych $p$, które są lokalizowane w przestrzeni i dają się znormalizować.
+
+Reprezentacja pędowa jest transformatą Fouriera funkcji falowej w położeniu:
+$$\phi(p) = \frac{1}{\sqrt{2\pi \hbar}} \int_{-\infty}^{+\infty} \psi(x) \mathrm{e}^{-\frac{ipx}{\hbar}} \mathrm{d} x.$$
+Funkcja falowa wyraża się więc przez odwrotną transformatę Fouriera reprezentacji pędowej:
+$$\psi(x) = \frac{1}{\sqrt{2\pi \hbar}} \int_{-\infty}^{+\infty} \phi(p) \mathrm{e}^{\frac{ipx}{\hbar}} \mathrm{d} p.$$
 
 \subsection{Stany kwantowe, operatory oraz równanie Schrödingera w interpretacji Feynmana}
+(z różnych źródeł, fiszek fishcards, chatu, notatek)
+\textbf{Stan kwantowy} to matematyczny opis systemu kwantowego, który zawiera wszystkie informacje o jego właściwościach.  
+\textit{Podstawowe elementy stanu kwantowego:}
+\begin{itemize}
+  \item \textit{Funkcja falowa} \(\Psi(\mathbf{r},t)\) lub ogólniej wektor stanu \(\lvert \psi \rangle\) w przestrzeni Hilberta.
+  \item \textit{Przestrzeń Hilberta} \(\mathcal{H}\) – zespolona przestrzeń wektorowa z iloczynem skalarnym, w której żyją wektory stanu.
+ \end{itemize}
+\textit{Rodzaje stanów:}
+\begin{itemize}
+  \item{Stan czysty} 
+  \item{Stan mieszany} 
+  \textit{Superpozycja} to możliwość istnienia jednocześnie w wielu stanach bazowych 
+ \end{itemize}
+  
+\textbf{Operatory}
+Operator to matematyczny obiekt, który działa na funkcje falowe i odpowiada za pomiar wielkości fizycznych.
+Amplitudę że przejdziemy ze stanu $+S$ do $0R$ możemy zapisać jako
+\begin{equation*}
+	a = \langle\ 0R \vert \dots \rangle \langle\ \dots \vert \dots \rangle \dots \langle\ \dots \vert \dots \rangle \langle\ \dots \vert +S \rangle  = \langle\ 0R \vert A \vert +S \rangle 
+\end{equation*}
+gdzie $A$ to są różne operacje związane ze zbiorem urządzeń. Przez $\hat{A}$ będziemy oznaczać operator generalny.
+Możemy też zapisać macierz operatora $\hat{A}$. Niech $\vert +S \rangle$, $\vert 0S \rangle$, $\vert -S \rangle$ będą stanami naszej bazy. Wtedy mamy
+\begin{table}[ht]
+	\centering
+	\begin{tabular}[t]{c|c|c|c}
+		& $+$ & $0$ & $-$\\
+		\hline
+		$+$ & $\langle\ + \vert \hat{A} \vert + \rangle $ & $\langle\ + \vert \hat{A} \vert 0 \rangle $ & $\langle\ + \vert \hat{A} \vert - \rangle $ \\
+		\hline
+		$0$ & $\langle\ 0 \vert \hat{A} \vert + \rangle $ & $\langle\ 0 \vert \hat{A} \vert 0 \rangle $ & $\langle\ 0 \vert \hat{A} \vert - \rangle $ \\
+		\hline
+		$-$ & $\langle\ - \vert \hat{A} \vert + \rangle $ & $\langle\ - \vert \hat{A} \vert 0 \rangle $ & $\langle\ - \vert \hat{A} \vert - \rangle $ \\
+	\end{tabular}
+	\label{tab:macierzoperatora}
+\end{table}
 
-odpowiedź
+Powyższe nazywamy macierzą operatora $\hat{A}$ w bazie takiej jak wyżej podanej. Dajemy też czapkę nad operatorem aby zawsze było wiadomo że chodzi nam o operator, ale nie zawsze trzeba to pisać. Operator nigdy nie jest zależny od bazy ale macierz operatora zawsze jest w jakiejś bazie.
+\textit{Najważniejsze operatory w mechanice kwantowej}
 
+\begin{enumerate}
+  \item \textbf{Operator Hamiltona} \(\hat{H}\) \\
+    Opisuje całkowitą energię układu i steruje jego ewolucją czasową.
+
+  \item \textbf{Operator położenia} \(\hat{x}\) \\
+    Przypisuje wartość położenia cząstki.
+
+  \item \textbf{Operator pędu} \(\hat{p}\) \\
+    Odpowiada wartości pędu, w reprezentacji położenia jest operatorem różniczkowym.
+
+  \item \textbf{Operatory spinowe} \(\hat{S}_i\) (np. \(\hat{S}_x, \hat{S}_y, \hat{S}_z\)) \\
+    Opisują własności spinowe cząstek, np. spinu \(1/2\).
+
+  \item \textbf{Operator projekcji} \(\hat{P}\) \\
+    Rzutuje stan na podprzestrzeń odpowiadającą określonej wartości pomiaru.
+
+  \item \textbf{Operator unitarny} \(\hat{U}\) \\
+    Opisuje ewolucję jednostkową i zmiany baz wektorów stanu.
+
+  \item \textbf{Operator gęstości} \(\rho\) \\
+    Opisuje stan mieszany i statystyczny układ kwantowy.
+\end{enumerate}
+
+\textbf{Równanie Schrödingera w interpretacji Feynmana}
+nie wiem o co tu chodzi w notatkach jest jedynie coś nazwane ,,Eksperyment S-G w interpretacji Feynmana''. Wkleje to ponizej ale nie wiem czy o to chodzi. 
+Eksperyment z dwoma szczelinami.
+Prawdopodobieństwo, że elektron ze stanu S przejdzie do stanu X \newline [Stan $X$] $\leftarrow$ [Stan $S$] = $\vert\langle X\vert S\rangle\vert^2$ będziemy nazywać amplitudą.
+Amplitudę ze stanu $S$ do stanu $X$ możemy w tym przypadku zapisać dwojako, w postaci $\langle X\vert1\rangle, \langle 1\vert S\rangle$ jako przejścia ze stanu $S$ do stanu $1$ a następnie ze stanu $1$ do stanu $X$, oraz analogicznie w postaci $\langle X\vert2\rangle , \langle 2\vert S\rangle$. Przepiszemy, korzystając z tych oznaczeń zasadę superpozycji. Jeżeli chcemy przejść ze stanu $S$ do stanu $X$, to będziemy to zapisywać jako sumę amplitud $\langle X\vert S\rangle = \langle X\vert1\rangle\langle 1\vert S\rangle + \langle X\vert2\rangle \langle 2\vert S\rangle$. Jeżeli chcemy zapisać prawdopodobieństwo, to musimy obliczyć z tego moduł do kwadratu i obliczyć to wszystko w liczbach zespolonych $\vert\langle X\vert S\rangle \vert^2 = \vert[...]\vert^2$. 
+\textit{Pytanie} co oznacza superpozycja? Jeżeli chcemy obliczyć amplitudę, to jest to suma poszczególnych amplitud. Amplituda $S$ do $Z$ jest superpozycją przejścia przez szczeliny.
 \subsection{Twierdzenie Ehrenfesta}
+(notatki str. 27)
+$$
+\frac{d}{dt} \langle x \rangle = \frac{1}{m} \int \psi^* \left(-i\hbar \frac{\partial}{\partial x}\right) \psi \, d\vec{r} = \frac{1}{m} \langle \hat{p}_x \rangle.
+$$
 
-odpowiedź
+$$
+\frac{d}{dt} \langle \hat{p}_x \rangle = - \left\langle \frac{\partial V}{\partial x} \right\rangle.
+$$
+
+Powyższe dwa równania stanowią treść twierdzenia Ehrenfesta i pokazują, że średnie wartości położenia i pędu w mechanice kwantowej zmieniają się zgodnie z klasycznymi równaniami ruchu. 
+
 
 \subsection{Obserwable, równanie Schrödingera, zależne oraz niezależne od czasu, własne stany, własne energie}
 
-odpowiedź
+\textbf{Obserwable:}
+W mechanice kwantowej \textbf{obserwabla} (ang. observable) to fizyczna wielkość, którą można zmierzyć eksperymentalnie, np. położenie, pęd, energia czy spin. Każdej obserwabli odpowiada hermitowski operator $\hat{A}$ działający na funkcje falowe przestrzeni Hilberta. Wartość średnia obserwabli $\hat{A}$ w stanie opisanym funkcją falową $\psi(\vec{r}, t)$ dana jest przez wyrażenie:
+$$
+\langle \hat{A} \rangle = \int \psi^*(\vec{r}, t) \hat{A} \psi(\vec{r}, t) \, d\vec{r}.
+$$
+
+Operator $\hat{A}$ musi być hermitowski, aby wartości średnie $\langle \hat{A} \rangle$ były liczbami rzeczywistymi, zgodnie z wymaganiami eksperymentu:
+$$
+\langle \hat{A} \rangle \in \mathbb{R}.
+$$
+
+Dla hermitowskiego operatora $\hat{A}$ zachodzi również
+$$
+\langle \hat{A} \rangle = \int \psi^* (\hat{A} \psi) \, d\vec{r} = \int (\hat{A} \psi)^* \psi \, d\vec{r}.
+$$
+
+\textbf{Przykłady obserwabli:}
+
+\begin{itemize}
+    \item Średnia wartość położenia:
+    $$
+    \langle \hat{\vec{r}} \rangle = \int \psi^*(\vec{r}, t) \vec{r} \psi(\vec{r}, t) \, d\vec{r}.
+    $$
+
+    \item Średnia wartość funkcji $f(\vec{r}, t)$:
+    $$
+    \langle f(\vec{r}, t) \rangle = \int \psi^*(\vec{r}, t) f(\vec{r}, t) \psi(\vec{r}, t) \, d\vec{r}.
+    $$
+
+    \item Średnia wartość pędu (w reprezentacji położeniowej, po transformacji Fouriera):
+    $$
+    \langle \vec{p} \rangle = \int \psi^*(\vec{r}, t) \left( -i\hbar \vec{\nabla} \right) \psi(\vec{r}, t) \, d\vec{r}.
+    $$
+\end{itemize}
+\textbf{Równanie Schrödingera zależne od czasu:}
+
+\begin{equation}
+  i \hbar \frac{\partial}{\partial t} \Psi(\mathbf{r},t)
+  = \hat{H}\,\Psi(\mathbf{r},t),
+\end{equation}
+
+gdzie hamiltonian dla jednej cząstki w potencjale \(V(\mathbf{r},t)\) ma postać:
+\begin{equation}
+  \hat{H}
+  = -\frac{\hbar^2}{2m} \,\nabla^2 \;+\; V(\mathbf{r},t).
+\end{equation}
+
+\bigskip
+Poniżej zestawienie znaczenia poszczególnych symboli:
+
+\begin{itemize}
+  \item[\(\Psi(\mathbf{r},t)\)] funkcja falowa cząstki, zależna od współrzędnych przestrzennych \(\mathbf{r}\) i czasu \(t\).
+  \item[\(i\)] jednostka urojona, spełniająca \(i^2 = -1\).
+  \item[\(\hbar\)] stała Plancka podzielona przez \(2\pi\), \(\hbar = \frac{h}{2\pi}\).
+  \item[\(\frac{\partial}{\partial t}\)] pochodna cząstkowa względem czasu \(t\).
+  \item[\(\hat{H}\)] operator Hamiltona, opisujący energię całkowitą układu.
+  \item[\(m\)] masa cząstki.
+  \item[\(\nabla^2\)] operator Laplace’a
+  \item[\(V(\mathbf{r},t)\)] potencjał, w którym porusza się cząstka; może zależeć od położenia \(\mathbf{r}\) i czasu \(t\).
+\end{itemize}
+
+\textbf{Równanie Schrödingera niezależne od czasu:}
+\[
+\hat{H}\,\psi(\mathbf{r}) = E\,\psi(\mathbf{r}),
+\]
+gdzie
+\[
+\hat{H} = -\frac{\hbar^2}{2m}\,\nabla^2 + V(\mathbf{r}).
+\]
+
+\bigskip
+\noindent
+Znaczenie symboli:
+\begin{itemize}
+  \item[\(\hat{H}\)] operator Hamiltona (energia całkowita układu),
+  \item[\(\psi(\mathbf{r})\)] funkcja własna (stacjonarna funkcja falowa),
+  \item[\(E\)] wartość własna (energia stanu),
+  \item[\(\hbar\)] zredukowana stała Plancka (\(\hbar = h/(2\pi)\)),
+  \item[\(\nabla^2\)] operator Laplace’a 
+    \(\bigl(\nabla^2 = \tfrac{\partial^2}{\partial x^2}
+                        + \tfrac{\partial^2}{\partial y^2}
+                        + \tfrac{\partial^2}{\partial z^2}\bigr)\),
+  \item[\(V(\mathbf{r})\)] potencjał zależny od położenia \(\mathbf{r}\).
+\end{itemize}
+\textbf{własności własne energii własne}
+Funkcje własne operatora Hamiltona $\hat{H}$, oznaczane jako $\psi_E(\vec{r})$, spełniają równanie Schrödingera $\hat{H} \psi_E = E \psi_E,$ gdzie $E$ jest odpowiadającą im wartością własną, interpretowaną jako energia stanu. Zakładamy, że funkcje $\psi_E(\vec{r})$ są unormowane
+$$
+\int \psi_E^*(\vec{r}) \psi_E(\vec{r}) \, d\vec{r} = 1,
+$$
+oraz ortogonalne względem siebie dla różnych wartości energii
+$$
+\int \psi_E^*(\vec{r}) \psi_{E'}(\vec{r}) \, d\vec{r} = 0
+\quad \text{dla } E \ne E'.
+$$
+Dla $E \ne E'$ całka musi być równa zeru, czyli funkcje własne odpowiadające różnym wartościom energii są ortogonalne.
+
+Z faktu, że operator Hamiltona jest hermitowski, wynika również, że jego funkcje własne tworzą pełną bazę przestrzeni Hilberta. Oznacza to, że każdą funkcję falową $\Psi(\vec{r}, t)$ można przedstawić jako kombinację liniową funkcji własnych Hamiltonianu
+$$
+\Psi(\vec{r}, t) = \sum_E C_E(t) \psi_E(\vec{r}),
+$$
+gdzie suma biegnie po wszystkich stanach odpowiadających różnym energiom, w tym zdegenerowanym.
 
 \subsection{Proste zagadnienia: swobodna cząstka}
 
-odpowiedź
+Rozwiązanie równania Schrödingera dla swobodnej cząstki to fale płaskie o postaci $\Psi(x) = A e^{ikx} + B e^{-ikx}$, gdzie
+$k$ jest wektorem falowym związanym z energią kinetyczną cząstki. Energia jest zawsze nieujemna, a funkcje falowe muszą być
+ograniczone, co wymusza rzeczywiste wartości $k$.
+
+
+\begin{equation*}
+    - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi(x) = E \psi(x)
+\end{equation*}
+
+gdzie:
+\begin{equation*}
+    k = \frac{\sqrt{2mE}}{\hbar}
+\end{equation*}
+\begin{equation*}
+    \psi(x) = A e^{ikx} + B e^{-ikx}
+\end{equation*}
+
+$ k \in \mathbb{R} $, bo inaczej mamy rozbieżne $\psi(x)$. \\
+$ E >= 0 $, bo $ k = \frac{\sqrt{2mE}}{\hbar^2} $, a $ 2m > 0 $, $ \hbar > 0 $.
+
+Natomiast $E$ wyraża się wzorem:
+\begin{equation*}
+    E = \frac{\hbar^2 k^2}{2m}
+\end{equation*}
 
 \subsection{Proste zagadnienia: potencjał w kształcie schodków, bariery, studni kwadratowej}
 Szukamy rozwiązania równania Schrödingera dla ustalonych postaci potencjału niezależnego od czasu $V(x)$. Rozwiązujemy w tym celu równanie
@@ -57,7 +300,8 @@ Dla $x > 0$ mamy równanie $\frac{\partial^2}{\partial x^2} \psi(x) + \frac{2m(E
 
 Rozwiązanie zależeć będzie zatem od tego, po której stronie wysokości schodka jest $E$.
 \begin{enumerate}
-	\item Jeśli $0 < E < V_0$, to mamy \begin{equation*}
+	\item Jeśli $0 < E < V_0$, to mamy
+	\begin{equation*}
 		\psi_2(x) = C \mathrm{e}^{-\kappa x} + D \mathrm{e}^{\kappa x}, \text{ gdzie } \kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}.
 	\end{equation*}
 	Ponieważ drugi składnik rośnie nieograniczenie wraz ze wzrostem $x$, musi zachodzić $D = 0$. Stałe $A, B$ i $C$ możemy wyznaczyć z warunków ciągłości:
@@ -160,7 +404,8 @@ runkami brzegowymi wymuszającymi dyskretną strukturę stanów energetycznych
 		\psi(a) = \psi(-a) = 0, & \text{warunki brzegowe.}
 	\end{cases}
 \end{equation*}
-Rozwiązaniem ogólnym równania jest funkcja \begin{equation*}
+Rozwiązaniem ogólnym równania jest funkcja
+\begin{equation*}
 	\psi(x) = A\cos(kx) + B\sin(kx), \qquad k = \frac{\sqrt{2mE}}{\hbar^2}.
 \end{equation*}
 Uwzględnienie warunków brzegowych prowadzi do układu

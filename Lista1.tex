@@ -48,99 +48,251 @@ odpowiedź
 
 \subsection{Co to jest operator unitarny?}
 
-odpowiedź
+Operator liniowy w przestrzeni Hilberta, który zachowuje iloczyn skalarny.
 
 \subsection{Jak transformacje unitarne zachowują prawdopodobieństwo?}
 
-odpowiedź
+Transformacja unitarna $U$ spełnia $U^\dagger U = I$, więc zachowuje iloczyn skalarny:
+\[
+\langle \psi | \psi \rangle
+\;\xrightarrow{\,U\,}\;
+\langle \psi | U^\dagger U | \psi \rangle
+= \langle \psi | \psi \rangle.
+\]
+
+Ponieważ norma wektora stanu (a więc suma wszystkich prawdopodobieństw) pozostaje $1$, każda amplituda przejścia 
+$|\langle \phi | \psi \rangle|^{2}$ również się nie zmienia – stąd prawdopodobieństwa są zachowane.
 
 \subsection{Wyjaśnij ewolucję czasową za pomocą operatora ewolucji.}
 
-odpowiedź
+Ewolucja czasowa stanu układu kwantowego \(\lvert \psi(t) \rangle\) jest opisywana przez operator ewolucji \(U(t_{2},t_{1})\), który propaguje stan z czasu \(t_{1}\) do \(t_{2}\), zgodnie z zależnością
+\[
+\lvert \psi(t+\Delta t) \rangle \;=\; U\bigl(t+\Delta t,\,t\bigr)\,\lvert \psi(t) \rangle.
+\]
 
 \subsection{Wyjaśnij pojęcie stanów stacjonarnych.}
 
-odpowiedź
+Stany stacjonarne to rozwiązania równania Schrödingera, w których funkcja falowa może być rozdzielona na część zależną od współrzędnych przestrzennych oraz część zależną od czasu,
+\[
+\Psi(\vec r, t) = \psi(\vec r)\,f(t)
+\]
+i opisują dozwolone poziomy energetyczne układu.
 
 \subsection{Czym jest pakiet falowy?}
 
-odpowiedź
+Pakiet falowy to zbiór fal, który można opisać funkcją falową \(\Psi(x,t)\) w postaci całki po różnych pędach:
+\[
+\Psi(x,t)\;=\;\int_{-\infty}^{\infty}\!\phi(p_x)\,e^{\tfrac{i}{\hbar}(p_x x - E t)}\,\mathrm{d}p_x,
+\]
+gdzie \(\phi(p_x)\) jest funkcją określającą kształt pakietu falowego.  
+Przykładem jest pakiet Gaussowski, dla którego \(\phi(p_x)\) ma kształt funkcji Gaussa.
 
 \subsection{Co oznacza transformacja Fouriera funkcji falowej i jakie ma znaczenie fizyczne?}
 
-odpowiedź
+Transformacja Fouriera funkcji falowej pozwala na przejście z reprezentacji w przestrzeni położenia \(\Psi(x,0)\) do reprezentacji w przestrzeni pędu \(\phi(p_x)\) i odwrotnie, co umożliwia jednoczesne opisanie stanu cząstki zarówno w kategoriach położenia, jak i pędu:
+\[
+\phi(p_x)
+=\frac{1}{\sqrt{2\pi\hbar}}
+\int_{-\infty}^{\infty}
+\Psi(x,0)\,e^{-\frac{i}{\hbar}p_x x}\,\mathrm{d}x,
+\]
+\[
+\Psi(x,0)
+=\frac{1}{\sqrt{2\pi\hbar}}
+\int_{-\infty}^{\infty}
+\phi(p_x)\,e^{\frac{i}{\hbar}p_x x}\,\mathrm{d}p_x.
+\]
 
 \subsection{Wyjaśnij zjawisko tunelowania kwantowego.}
 
-odpowiedź
+\textbf{Źródło:} Notatki.pdf, rozdz.~5~\S5.3; Wikipedia\,\emph{Quantum tunnelling}.
+		
+		\vspace{4pt}
+		\textbf{Opis zjawiska.}\  
+		Jeżeli cząstka (np.~elektron) o energii $E$ zbliża się do skończonej bariery
+		potencjału wysokości $V_0$ i szerokości $a$, klasyczna fizyka
+		przewiduje całkowite odbicie, gdy $E<V_0$.
+		W mechanice kwantowej funkcja falowa $\psi(x)$ przenika barierę i maleje
+		wykładniczo:
+		\[
+		\psi(x)\propto e^{-\kappa x},\qquad \kappa=\sqrt{\tfrac{2m}{\hbar^{2}}(V_0-E)}.
+		\]
+		Współczynnik transmisji dla bariery jednorodnej ($\kappa a\gg1$):
+		\[
+		T\simeq e^{-2\kappa a},
+		\]
+		co wyjaśnia działanie STM, $\alpha$-rozpadu i prądów Josephsona.
+		
+		\vspace{4pt}
+		\textbf{Co oznacza co?}
+		\begin{itemize}
+			\item $m$ – masa cząstki,
+			\item $\hbar$ – zredukowana stała Plancka,
+			\item $V_0$, $a$ – wysokość i szerokość bariery,
+			\item $\kappa$ – współczynnik tłumienia w barierze,
+			\item $T$ – prawdopodobieństwo przejścia (transmisji), z $R+T=1$.
+		\end{itemize}
 
 \subsection{Wyjaśnij transformację Fouriera między przestrzenią położeń a pędu.}
 
-odpowiedź
+\textbf{Źródło:} Notatki.pdf, rozdz.~2~\S2.2; Wikipedia\,\emph{Momentum space}.
+		
+		Pakiet falowy opisany w przestrzeni położeń $\Psi(x)$ i pędu $\phi(p)$ łączy
+		para transformat:
+		\[
+		\boxed{\Psi(x)=\tfrac{1}{\sqrt{2\pi\hbar}}\!\int\!\phi(p)\,e^{\tfrac{i}{\hbar}px}dp},\qquad
+		\boxed{\phi(p)=\tfrac{1}{\sqrt{2\pi\hbar}}\!\int\!\Psi(x)\,e^{\! -\tfrac{i}{\hbar}px}dx}.
+		\]
+		Dla dowolnego $t$:
+		\[
+		\Psi(x,t)=\tfrac{1}{\sqrt{2\pi\hbar}}\!\int\!\phi(p)\,e^{\tfrac{i}{\hbar}(px-E(p)t)}dp,\qquad E(p)=\tfrac{p^{2}}{2m}.
+		\]
+		
+		\textbf{Symbole:} $x$ – położenie, $p$ – pęd, $\hbar$ – stała Plancka z kreską.
+		Nieoznaczoność $\Delta x\,\Delta p \ge \hbar/2$ wynika z tej pary transformacji.
 
 \subsection{Czym są stany swobodne i związane?}
 
-odpowiedź
+\textbf{Źródło:} Notatki.pdf, rozdz.~4; Griffiths\,\emph{Introduction to QM}, ch.~2.
+		
+		\textbf{Swobodne:} $V(x)=0$, $\psi_k=e^{\pm ikx}$, $E=\hbar^{2}k^{2}/2m>0$ – widmo ciągłe.
+		
+		\textbf{Związane:} cząstka uwięziona; normalizacja $\Rightarrow$ dyskretne $E_n<0$.
+		W studni nieskończonej szerokości $a$: $E_n=\hbar^{2}\pi^{2}n^{2}/2ma^{2}$.
+		
+		\textbf{Rozproszone:} $E>0$ przy skończonym potencjale – fala padającą, odbita i transmitowana.
+		
+		\textbf{Symbole:} $k=\sqrt{2mE}/\hbar$, $n=1,2,\dots$, $a$ – szerokość studni.
 
 \subsection{Jakie są warunki ciągłości dla funkcji falowej i jej pochodnych?}
 
-odpowiedź
+\textbf{Źródło:} Notatki.pdf, rozdz.~3~\S3.1.
+		
+		Dla skończonego, skokowego potencjału $V(x)$ na granicy $x_0$:
+		\[
+		\psi(x_0^-) = \psi(x_0^+),\qquad
+		\psi'(x_0^-) = \psi'(x_0^+).
+		\]
+		Dla bariery nieskończonej: $\psi=0$ na krawędzi, pochodna może skakać.
 
 \subsection{Co to jest operator momentu pędu?}
 
-odpowiedź
+\textbf{Źródło:} Wikipedia\,\emph{Angular momentum operator}; Cohen-Tannoudji, vol.~1, ch.~7.
+		
+		\[
+		\hat{\mathbf L}=\hat{\mathbf r}\times\hat{\mathbf p}=-i\hbar(\mathbf r\times\nabla),
+		\]
+		\[
+		\hat L_x=-i\hbar(y\partial_z-z\partial_y),\quad
+		\hat L_y=-i\hbar(z\partial_x-x\partial_z),\quad
+		\hat L_z=-i\hbar(x\partial_y-y\partial_x).
+		\]
+		\textbf{Symbole:} $\mathbf r=(x,y,z)$, $\nabla$ – operator nabla.
 
 \subsection{Jakie są relacje komutacyjne dla składników momentu pędu?}
 
-odpowiedź
+\textbf{Źródło:} Wikipedia\,\emph{Angular momentum operator}; Sakurai\,\emph{Modern QM}, \S3.3.
+		
+		Składowe nie komutują:
+		\[
+		[\hat L_x,\hat L_y]=i\hbar\hat L_z,\quad
+		[\hat L_y,\hat L_z]=i\hbar\hat L_x,\quad
+		[\hat L_z,\hat L_x]=i\hbar\hat L_y.
+		\]
+		Całkowity moment
+		\(
+		\hat L^{2}=\hat L_x^{2}+\hat L_y^{2}+\hat L_z^{2}
+		\)
+		komutuje z każdą składową: $[\hat L^{2},\hat L_i]=0$.
+		
+		\textbf{Konsekwencje:}
+		\begin{itemize}
+			\item Można jednocześnie diagonalizować $\hat L^{2}$ i $\hat L_z$.
+			\item Wartości własne: $\hat L^{2}|l,m\rangle=\hbar^{2}l(l+1)|l,m\rangle$, $\hat L_z|l,m\rangle=\hbar m|l,m\rangle$.
+			\item Liczby kwantowe: $l=0,1,2,\dots$ oraz $m=-l,\dots,l$.
+		\end{itemize}
 
 \subsection{Jakie są wartości własne $L^2$ i $L_z$?}
 
-odpowiedź
+\begin{align*}
+L^2 Y_{lm} &= \hbar^2 l(l+1) Y_{lm}, \\
+L_z Y_{lm} &= \hbar m Y_{lm},
+\end{align*}
+gdzie:
+\begin{itemize}
+  \item \( Y_{lm}(\theta, \phi) \) -- sferyczna funkcja harmoniczna,
+  \item \( \hbar \) -- zredukowana stała Plancka, \( \hbar = \frac{h}{2\pi} \),
+  \item \( l \in \{0, 1, 2, \ldots\} \) -- główna (orbitalna) liczba kwantowa,
+  \item \( m \in \{-l, -l+1, \ldots, l\} \) -- magnetyczna liczba kwantowa.
+\end{itemize}
 
 \subsection{Jaki jest związek między funkcjami $Y_{lm}$ a momentem pędu?}
 
-odpowiedź
+Funkcje \( Y_{lm}(\theta, \phi) \) to sferyczne funkcje harmoniczne. Są funkcjami własnymi operatorów momentu pędu. Funkcje \( Y_{lm} \) opisują część kątową funkcji falowej w układach sferycznie symetrycznych, np. w atomie wodoru.
 
 \subsection{Co to jest obrót w przestrzeni i jak działa na funkcje falowe?}
 
-odpowiedź
+Obrót w przestrzeni to transformacja układu współrzędnych (lub funkcji) polegająca na obróceniu obiektów względem punktu (zwykle początku układu współrzędnych) o pewien kąt wokół wybranej osi. Stan układu opisuje funkcja falowa $\psi(\vec{r})$. Obrót przestrzeni wpływa na sposób, w jaki ta funkcja jest rozłożona w przestrzeni.
 
 \subsection{Co to jest moment własny (spin)?}
 
-odpowiedź
+Moment własny, czyli \textbf{spin}, to wewnętrzna, kwantowa forma momentu pędu cząstki. Spin jest cechą wrodzoną cząstki i nie wynika z jej ruchu w przestrzeni. Opisywany jest operatorem $\vec{S}$. Na przykład cząstka w eksperymencie Sterna-Gerlacha ma spin \( s = 1 \), więc może przyjmować trzy stany spinu: \( m_s = -1, 0, +1 \).
 
 \subsection{Jakie są wartości dozwolone dla spinu cząstki?}
 
-odpowiedź
+Spin cząstki, może przyjmować wartości:
+\[
+s \in \left\{ 0, \tfrac{1}{2}, 1, \tfrac{3}{2}, 2, \dots \right\}.
+\]
 
 \subsection{Czym są macierze Pauliego?}
 
-odpowiedź
+Macierze Pauliego to zestaw trzech specjalnych macierzy \( 2 \times 2 \), oznaczanych zwyczajowo jako \( \sigma_x \), \( \sigma_y \) oraz \( \sigma_z \). Stanowią one podstawę do opisu operatorów spinu dla cząstek o spinie \( \frac{1}{2} \). Mają postać:
+
+\[
+\sigma_x = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}, \quad
+\sigma_y = \begin{pmatrix}
+0 & -i \\
+i & 0
+\end{pmatrix}, \quad
+\sigma_z = \begin{pmatrix}
+1 & 0 \\
+0 & -1
+\end{pmatrix}.
+\]
+
+Pozwalają na opis stanów spinu i ich transformacji, m.in. w eksperymentach Stern-Gerlacha czy przy analizie obrotów kwantowych.
 
 \subsection{Zdefiniuj operator spinowy $S$.}
 
-odpowiedź
+Operator spinowy S to operator kwantowomechaniczny, który opisuje wewnętrzny moment pędu cząstki (np. elektronu).
 
 \subsection{Co to jest doświadczenie Stern-Gerlacha i co pokazuje?}
 
-odpowiedź
+Doświadczenie polegało na przepuszczeniu wiązki atomów srebra przez niejednorodne pole magnetyczne i obserwacji obrazu wiązki na ekranie (np. kliszy). Wyniki pokazały, że moment pędu (dokładnie spin) przyjmuje wartości skwantowane — strumień się rozdziela na dwie wiązki, co odpowiada dwu stanom spinu (+1/2 lub -1/2).
 
 \subsection{Co to znaczy, że spin nie ma klasycznego odpowiednika?}
 
-odpowiedź
+Spin to wewnętrzna własność cząstek, która nie znajduje odzwierciedlenia w jakimś ruchu obrotowym czy obrocie ładunku, tak jak moment pędu orbitalnego. Nie można sobie go wyobrazić jak kręcącą się kulkę — to wielkość czysto kwantowa
 
 \subsection{Jakie są stany własne atomu wodoru?}
 
-odpowiedź
+Stany własne atomu wodoru to rozwiązania równania Schrödingera dla elektronu w polu kulombowskim jądra (protonu). Mają one ścisłą analityczną postać i są scharakteryzowane przez trzy liczby kwantowe
 
 \subsection{Jakie są liczby kwantowe w atomie wodoru?}
-
-odpowiedź
+wyróżniamy trzy liczby kwantowe:
+\begin{itemize}
+  \item $n$ -- główna liczba kwantowa ($n=1,2,3,\dots$);
+  \item $l$ -- orbitalna liczba kwantowa ($l=0,1,2,\dots,n-1$;
+  \item $m_l$ -- magnetyczna liczba kwantowa ($m_l= -l,-(l+1),\dots, l-1, l)$;
+\end{itemize}
 
 \subsection{Wyjaśnij degenerację poziomów energetycznych w atomie wodoru.}
 
-odpowiedź
+sytuacja, gdy kilka różnych stanów kwantowych ma tę samą energię. W przypadku atomu wodoru, stany o tym samym numerze powłoki głównej (n), ale różniących się liczbami kwantowymi orbitalnymi (l) i magnetycznymi (ml), mogą mieć tę samą energię w idealnym modelu atomu
 
 \subsection{Na czym polega zakaz Pauliego?}
 
