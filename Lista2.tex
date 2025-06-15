@@ -31,16 +31,229 @@ odpowiedź
 odpowiedź
 
 \subsection{Proste zagadnienia: potencjał w kształcie schodków, bariery, studni kwadratowej}
+Szukamy rozwiązania równania Schrödingera dla ustalonych postaci potencjału niezależnego od czasu $V(x)$. Rozwiązujemy w tym celu równanie
+\begin{equation*}
+	-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi(x) + V(x)\psi(x) = E\psi(x).
+\end{equation*}
 
-odpowiedź
+\subsubsection*{Potencjał schodkowy}
+\begin{equation*}
+	V(x) = \begin{cases}
+		0, &x < 0,\\
+		V_0, &x \geq 0.
+	\end{cases}
+\end{equation*}
+Rozwiążemy równanie osobno dla $x < 0$ i $x > 0$, a na końcu połączymy te rozwiązania tak, by mogło służyć do opisu ruchu cząstek między obszarami.
 
+Dla $x < 0$ mamy równanie $\frac{\partial^2}{\partial x^2} \psi(x) + \frac{2mE}{\hbar^2}\psi(x) = 0,$ którego rozwiązaniem ogólnym jest 
+\begin{equation*}
+	\psi_1(x) = A \mathrm{e}^{i k_1 x} + B \mathrm{e}^{-i k_1 x}, \text{ gdzie } k_1 = \frac{\sqrt{2mE}}{\hbar}.
+\end{equation*}
+
+Dla $x > 0$ mamy równanie $\frac{\partial^2}{\partial x^2} \psi(x) + \frac{2m(E - V_0)}{\hbar^2}\psi(x) = 0,$ którego rozwiązaniem ogólnym jest 
+\begin{equation*}
+	\psi_2(x) = C \mathrm{e}^{i k_2 x} + D \mathrm{e}^{-i k_2 x}, \text{ gdzie } k_2= \frac{\sqrt{2m(E - V_0)}}{\hbar}.
+\end{equation*}
+
+Rozwiązanie zależeć będzie zatem od tego, po której stronie wysokości schodka jest $E$.
+\begin{enumerate}
+	\item Jeśli $0 < E < V_0$, to mamy \begin{equation*}
+		\psi_2(x) = C \mathrm{e}^{-\kappa x} + D \mathrm{e}^{\kappa x}, \text{ gdzie } \kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}.
+	\end{equation*}
+	Ponieważ drugi składnik rośnie nieograniczenie wraz ze wzrostem $x$, musi zachodzić $D = 0$. Stałe $A, B$ i $C$ możemy wyznaczyć z warunków ciągłości:
+	\begin{equation*}
+		\psi_1(0) = \psi_2(0), \quad \psi_1'(0) = \psi_2'(0).
+	\end{equation*}
+	Mamy więc 
+	\begin{equation*}
+		A + B = C, \quad i k_1 (A - B) = -\kappa C
+	\end{equation*}
+	Otrzymaliśmy układ dwóch równań liniowych na trzy nieznane zespolone amplitudy. Wyznaczymy $A$ i $B$ w zależności od $C$.
+	\begin{equation*}
+		A = \frac{k_1 + i\kappa}{2k_1}C, \quad B = \frac{k_1 - i\kappa}{2k_1}C.
+	\end{equation*}
+	Wynika stąd, że
+	\begin{equation*}
+		\frac{B}{A} = \mathrm{e}^{i\alpha}, \quad \alpha = 2\arctan\left(-\sqrt{\frac{V_0}{E} - 1}\right).
+	\end{equation*}
+	Fala odbita różni się od fali padającej przesunięciem fazowym $\alpha$, co wpływa na interferencję i kształt fali stojącej w obszarze $x<0$.
+	Współczynnik odbicia to
+	\begin{equation*}
+		R = \frac{|B|^2}{|A|^2} = |\mathrm{e}^{i\alpha}|^2 = 1,
+	\end{equation*}
+	a zatem zachodzi całkowite odbicie od schodka i nie ma przenikania do obszaru o wyższym potencjale.
+	
+	\item Jeśli $E > V_0$, to $D = 0$. Jest tak, ponieważ $D$ odpowiada amplitudzie fali biegnącej od prawej do lewej, natomiast dla $x>0$ nie ma możliwości odbicia, ponieważ potencjał jest stały (nie ma kolejnej bariery). Pozostałe stałe wyznaczamy z warunków ciągłości:
+	\begin{equation*}
+		A + B = C, \quad ik_1 (A - B) = ik_2 C,
+	\end{equation*}
+	a zatem mamy
+	\begin{equation*}
+		B = \frac{k_1 - k_2}{k_1 + k_2}A, \quad C = \frac{2k_1 }{k_1 + k_2}A.
+	\end{equation*}
+	Współczynniki odbicia i przejścia to
+	\begin{align*}
+		R &= \frac{|B|^2}{|A|^2} = \left(\frac{k_1 - k_2}{k_1 + k_2}\right)^2 = \left(\frac{1 - \sqrt{1 - \frac{V_0}{E}}}{1 + \sqrt{1 - \frac{V_0}{E}}}\right)^2,\\
+		T &= \frac{k_2}{k_1}\frac{|C|^2}{|A|^2} = \frac{4k_1k_2}{(k_1 + k_2)^2} = \frac{4\sqrt{1 + \frac{V_0}{E}}}{\left(1 - \sqrt{1 - \frac{V_0}{E}}\right)^2}.
+	\end{align*}
+	
+	\item Jeśli $E < 0$, równanie nie ma rozwiązań. Być może wymaga to dodatkowego wyjaśnienia, ale nie wiem jak ono dokładnie brzmi.
+\end{enumerate}
+
+\subsubsection*{Bariera potencjału}
+\begin{equation*}
+	V(x) = \begin{cases}
+		0, &x \leq 0,\\
+		V_0, &0<x<a,\\
+		0, &x\geq a
+	\end{cases}
+\end{equation*}
+Przypadek energii ujemnej wykluczamy tak jak w poprzednim przykładzie. Musimy więc znów rozważyć dwa przypadki: $0<E<V_0$ oraz $E>V_0$.
+
+Zaczniemy od pierwszego z nich. Ponownie znajdujemy rozwiązanie ogólne równania Schrödingera na wszystkich trzech przedziałach.
+\begin{equation*}
+	\psi(x) = \begin{cases}
+		A\mathrm{e}^{ikx} + B\mathrm{e}^{-ikx}, &x<0, \quad k = \frac{\sqrt{2mE}}{\hbar},\\
+		C\mathrm{e}^{ikx}, & x>a,\\
+		F\mathrm{e}^{\kappa x} + G\mathrm{e}^{-\kappa x}, &0<x<a, \quad \kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}.
+	\end{cases}
+\end{equation*}
+Zauważmy, że nie ma składnika $D\mathrm{e}^{-ikx}$, ponieważ w obszarze $x>a$ spotkamy tylko to, co przeszło przez barierę --- nie będzie tam więc cząstek poruszających się ,,w lewo''.
+
+Stałe ponownie możemy wyznaczyć z warunków ciągłości $\psi(x)$ i $\psi'(x)$ w $0$ i $a$. Można pokazać, że
+\begin{equation*}
+	R = \frac{1}{1 + \frac{4E(V_0 - E)}{V_0^2 \sinh^2(\kappa a)}}, \quad T = \frac{1}{1 + \frac{V_0^2 \sinh^2(\kappa a)}{4E(V_0 - E)}}.
+\end{equation*}
+
+Jeżeli zaś $E>V_0$, to
+\begin{equation*}
+	\psi(x) = \begin{cases}
+		A\mathrm{e}^{ikx} + B\mathrm{e}^{-ikx}, &x<0, \quad k = \frac{\sqrt{2mE}}{\hbar},\\
+		C\mathrm{e}^{ikx}, & x>a,\\
+		F\mathrm{e}^{ik'x} + G\mathrm{e}^{-ik'x}, &0<x<a, \quad k' = \frac{\sqrt{2m(E-V_0)}}{\hbar}.
+	\end{cases}
+\end{equation*}
+Prowadzi to do następujących wzorów na współczynniki odbicia i przejścia:
+\begin{equation*}
+		R = \frac{1}{1 + \frac{4E(E-V_0)}{V_0^2 \sin^2(k'a)}}, \quad T = \frac{1}{1 + \frac{V_0^2 \sin^2(k' a)}{4E(E-V_0)}}.
+\end{equation*}
+
+\subsubsection*{Studnia kwadratowa:}
+Nieskończona studnia potencjału to model idealizowany, w którym cząstka jest całkowicie
+uwięziona między nieprzekraczalnymi barierami potencjału.
+
+\begin{equation*}
+	V(x) = \begin{cases}
+		0, &|x|<a,\\
+		\infty, &|x|\geq a.
+	\end{cases}
+\end{equation*}
+Funkcja falowa musi zerować się na granicach studni i poza nią, ponieważ cząstka nie może znajdować się poza nieskończonymi barierami:
+\begin{equation*}
+	\psi(x) = 0 \text{ dla } |x| \geq a.
+\end{equation*}
+Wewnątrz studni równanie Schrödingera opisuje swobodną cząstkę, ale z nałożonymi wa-
+runkami brzegowymi wymuszającymi dyskretną strukturę stanów energetycznych
+\begin{equation*}
+	\begin{cases}
+		-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi(x) = E\psi(x), &|x|<a\\
+		\psi(a) = \psi(-a) = 0, & \text{warunki brzegowe.}
+	\end{cases}
+\end{equation*}
+Rozwiązaniem ogólnym równania jest funkcja \begin{equation*}
+	\psi(x) = A\cos(kx) + B\sin(kx), \qquad k = \frac{\sqrt{2mE}}{\hbar^2}.
+\end{equation*}
+Uwzględnienie warunków brzegowych prowadzi do układu
+\begin{equation*}
+	\begin{cases}
+		A\cos(ka) &= 0,\\
+		B\sin(ka) &= 0.
+	\end{cases}
+\end{equation*}
+Ponieważ $\cos$ i $\sin$ nie mogą być jednocześnie zerami, otrzymujemy dwie klasy rozwiązań, co odpowiada symetrii funkcji falowej względem środka studni.
+
+Przypadek I:
+\begin{equation*}
+	\begin{cases}
+		B = 0\\
+		\cos(ka) = 0
+	\end{cases}
+	 \implies
+	\begin{cases}
+		B = 0\\
+		k = k_n = n \frac{\pi}{2a}, n = 1, 3, 5, \dots
+	\end{cases}
+\end{equation*}
+Mamy więc $\psi_n(x) = A_n \cos(k_n x)$. Normalizacja funkcji falowej wymusza $A_n = \frac{1}{\sqrt{a}}$:
+\begin{equation*}
+	\int_{-a}^{a} |\psi(x)|^2 \mathrm{d}x = 1 \implies A_n^2 \int_{-a}^{a} \cos^2(k_nx) \mathrm{d}x = 1 \implies A_n^2 a = 1 \implies A_n = \frac{1}{\sqrt{a}}
+\end{equation*}
+
+Przypadek II:
+\begin{equation*}
+	\begin{cases}
+		A = 0\\
+		\sin(ka) = 0
+	\end{cases}
+	\implies
+	\phi_n(x) = \frac{1}{\sqrt{a}} \sin(k_n x), \quad n = 2, 4, 6, \dots.
+\end{equation*}
+
+Spektrum energii jest dyskretne i rośnie z kwadratem liczby kwantowej n, co oznacza, że
+cząstka może zajmować tylko określone poziomy energetyczne.
+\begin{equation*}
+	E_n = \frac{\hbar^2k_n^2}{2m} = \frac{\hbar^2\pi^2}{2mL^2}n^2,
+\end{equation*}
+gdzie $L = 2a$ jest szerokością studni. Wartości $k_n$ są ściśle powiązane
+z poziomami energii i określają kształt funkcji falowej w studni.
 \subsection{Proste zagadnienia: oscylator harmoniczny}
 
-odpowiedź
+Szukamy rozwiązań równania
+\begin{equation*}
+	-\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \psi(x) + \frac12kx^2\psi(x) = E\psi(x).
+\end{equation*}
+Wbrew nazwie podsekcji, rozwiązanie go nie jest prostym zagadnieniem. Okazuje się, że istnieje rodzina rozwiązań postaci
+\begin{equation*}
+	\psi_n(x) = N_n H_n(\alpha x) \mathrm{e}^{-\frac{(\alpha x)^2}{2}},
+\end{equation*} 
+gdzie $\alpha = \sqrt[4]{\frac{km}{\hbar}}$, $H_n$ to wielomiany Hermite'a, natomiast $N_n$ jest stałą normującą, równą $\sqrt{\frac{\alpha}{\sqrt{\pi} 2^n n!}}$.
 
+Odpowiadają im wartości własne postaci $E_n = \left(n + \frac12\right) \hbar \sqrt{\frac{k}{m}}$. Dla innych wartości energii funkcja falowa zmierza do nieskończoności przy $|x| \to \infty$.
 \subsection{Formalizm mechaniki kwantowej, postulaty}
-
-odpowiedź
+\begin{enumerate}
+	\item Postulat I: Wektor stanu
+	
+	W każdej chwili czasu $t$ stan układu fizycznego jest określony przez wektor $\ket{\psi(t)}$ należący do pewnej przestrzeni Hilberta $\mathcal{H}$.
+	
+	\item Postulat II: obserwable
+	
+	Każdej mierzalnej wielkości fizycznej $\mathcal{A}$ odpowiada obserwabla $\hat{A}$ działająca w $\mathcal{H}$ (operator hermitowski).
+	
+	\item Postulat III: wyniki pomiarów --- wartości własne obserwabli
+	
+	Jedynym dopuszczalnym wynikiem pomiaru wielkości fizycznej $\mathcal{A}$ może być któraś z wartości własnych obserwabli $\hat{A}$.
+	
+	\item Postulat IV: prawdopodobieństwo wyników pomiarowych
+	
+	Prawdopodobieństwo tego, że w wyniku pomiaru wielkości fizycznej $\mathcal{A}$ w układzie opisanym wektorem stanu $\ket{\psi}$ otrzymamy wartość własną $a_n$ wynosi $|\braket{\phi_n}{\psi}|^2$, gdzie $\ket{\phi_n}$ jest wektorem własnym odpowiadającym wartości własnej $a_n$.
+	
+	\item Postulat V: redukcja (kolaps) wektora stanu
+	
+	Jeśli w układzie fizycznym opisanym stanem $\ket{\psi}$ dokonamy pomiaru wielkości fizycznej $\mathcal{A}$ otrzymując $a_n$, jedną z wartości własnych obserwabli $\hat{A}$, to po pomiarze stanem układu jest unormowany rzut stanu $\ket{\psi}$ na (unormowany) wektor własny $\ket{\phi_n}$ odpowiadający zmierzonej wartości własnej.
+	\begin{equation*}
+		\ket{\psi} \xrightarrow{\text{pomiar } a_n} \ket{\phi_n}\frac{\braket{\phi_n}{\psi}}{\sqrt{|\braket{\phi_n}{\psi}|^2}}.
+	\end{equation*}
+	
+	Innymi słowy mówimy, że w wyniku pomiaru następuje redukcja (kolaps) stanu $\ket{\psi}$ do stanu $\ket{\phi_n}$.
+	
+	\item Postulat VI: ewolucja w czasie --- równanie Schrödingera
+	
+	Stan $\ket{\psi(t)}$ układu fizycznego ewoluuje w czasie zgodnie z równaniem Schrödingera
+	\begin{equation*}
+		i\hbar\frac{d}{dt} \ket{\psi(t)} = \hat{H}(t)\ket{\psi(t)},
+	\end{equation*}
+	gdzie hamiltonian $\hat{H}(t)$ jest obserwablą odpowiadającą całkowitej energii układu. 
+\end{enumerate}
 
 \subsection{Klasy i własności operatorów. Komutatory}
 
