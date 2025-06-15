@@ -56,27 +56,54 @@ Iloczyn skalarny pozwala również definiować normę ($\|\psi\|^{2}=\braket{\ps
 
 \subsection{Wyjaśnij znaczenie normalizacji stanów kwantowych.}
 
-odpowiedź
+Normalizacja oznacza, że całkowite prawdopodobieństwo znalezienia cząstki w całej przestrzeni wynosi 1:
+\[
+\int |\Psi(\vec{r}, t)|^2 \, d\vec{r} = 1.
+\]
+Nieunormowane stany można znormalizować, dzieląc je przez pierwiastek z ich normy:  
+\[
+\psi_{\text{norm}} = \frac{\psi}{\sqrt{\langle \psi | \psi \rangle}}.
+\]
 
 \subsection{Co oznacza, że dwa stany kwantowe są ortogonalne?}
 
-odpowiedź
+Dwa stany $\psi_1$ i $\psi_2$ są ortogonalne, gdy ich iloczyn skalarny jest zerowy:
+\[
+\langle \psi_1 | \psi_2 \rangle = 0.
+\]
+Oznacza to, że są całkowicie rozróżnialne (np. stany własne różnych wartości własnych hermitowskiego operatora).
 
 \subsection{Wyjaśnij pojęcie superpozycji stanów.}
 
-odpowiedź
+Superpozycja to sytuacja, w której stan jest kombinacją liniową innych stanów:
+\[
+|\psi\rangle = c_1|\psi_1\rangle + c_2|\psi_2\rangle.
+\]
+Prawdopodobieństwo zależy od interferencji tych składników.
+
 
 \subsection{Jakie są relacje komutacyjne operatorów położenia i pędu?}
 
-odpowiedź
+Operatory $\hat{x}$ i $\hat{p}$ spełniają relację:
+\[
+[\hat{x}, \hat{p}] = i\hbar.
+\]
+Jest to podstawa zasady nieoznaczoności Heisenberga dla położenia i pędu.
 
 \subsection{Co oznacza, że dwa operatory komutują?}
 
-odpowiedź
+Operatory $\hat{A}$ i $\hat{B}$ komutują, jeśli:
+\[
+[\hat{A}, \hat{B}] = 0.
+\]
+Wówczas mają wspólne stany własne i można je zmierzyć jednocześnie z dowolną precyzją.
 
 \subsection{Czym jest pełny układ bazowy w przestrzeni Hilberta?}
 
-odpowiedź
+To zbiór ortonormalnych stanów, w którym każdy inny stan można przedstawić jako ich kombinację liniową:
+\[
+|\psi\rangle = \sum_i c_i |i\rangle.
+\]
 
 \subsection{Co to jest operator unitarny?}
 
